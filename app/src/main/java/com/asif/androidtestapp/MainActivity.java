@@ -97,7 +97,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void filter(String text) {
             List<User> filteredNames = new ArrayList<>();
-
+            
+           if (text.isEmpty()) {
+                filteredNames = userList;
+            } else {
             for (User s : userList) {
                 if (s != null) {
 
@@ -106,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+        }
             adapter.filterList(filteredNames);
     }
 
